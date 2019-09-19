@@ -1,15 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 .cabecalho {
     background-color: darkgrey;
     text-align: center;
     height: 200px;
     font-family: sans-serif;
-}
-
-.navegador-superior {
-    background-color: #593237;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
+    grid-area: header;
+    border: 1px solid black;
 }
 
 .alinhar-imagem {
@@ -17,54 +16,66 @@
     max-height: 110%;
 }
 
-.menu-superior {
-    color: floralwhite;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 5px;
+.menu-lateral {
+    grid-area: menu;
+    background-color: darkgrey;
+    height: 680px;
+    text-align: center;
+    margin-top: 5px;
+    border: 1px solid black;
 }
 
-.menu-content {
-    font-family: 'Oswald', sans-serif;
-    padding: 0 0 0 50px;
-}
-
-.collapsible-menu {
-    padding: 0px 30px;
-    user-select: none;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-}
-
-.collapsible-menu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.collapsible-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.collapsible-menu label {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 56px;
-    display: block;
+.itens-menu {
+    display: inline;
     cursor: pointer;
-    padding: 10px 0 10px 50px;
 }
 
-input#menu {
-    display: none;
+.bg {
+    background-color: dimgrey;
 }
 
-.menu-content {
-    max-height: 0;
-    overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0 0 0 50px;
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header header header header' 'menu main main main2 main2 main2' 'menu main3 main3 main3 main3 main3';
 }
 
-input:checked~.menu-content {
-    max-height: 100%;
+.conteudo {
+    grid-area: main;
+}
+
+.box-content {
+    padding: 2px;
+    margin-top: 5px;
+    grid-area: main;
+    margin-left: 5px;
+    background-color: rgb(169, 169, 169, .5);
+    border: 1px solid black;
+}
+
+.box-content2 {
+    padding: 2px;
+    margin-top: 5px;
+    grid-area: main2;
+    margin-left: 5px;
+    background-color: rgb(169, 169, 169, .5);
+    border: 1px solid black;
+}
+
+.box-content3 {
+    padding: 2px;
+    margin-top: 5px;
+    grid-area: main3;
+    margin-left: 5px;
+    background-color: rgb(169, 169, 169, .5);
+    border: 1px solid black;
+}
+
+.footer {
+    grid-area: main3;
+}
+
+@media screen and (max-width:700px) {
+    .menu-lateral {
+        display: none;
+    }
 }
